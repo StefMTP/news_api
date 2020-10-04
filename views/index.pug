@@ -1,0 +1,30 @@
+extends layout
+
+block content
+    .card
+        .card-body
+            h1.display-1.card-title= title
+            h2.display-4.card-subtitle.text-muted= "Get Top Headlines"
+            p.card-text.lead.mt-5= "This small page can help you make some requests to the News API for the top headlines from all sources, simply select the category and the country, and press the 'Get Headlines' button."
+            form(method="GET", action="/headlines")
+                .form-group
+                    label(for="select1") Select category...
+                    select.form-control(name="category", id="select1")
+                        option Business
+                        option Entertainment
+                        option Health
+                        option Science
+                        option Sports
+                        option Technology
+                .form-group
+                    label(for="select2") Select country...
+                    select.form-control(name="country" id="select2")
+                        option(value="us") United States
+                        option(value="gr") Greece
+                        option(value="tr") Turkey
+                        option(value="de") Germany
+                    span.flag-icon.flag-icon-us
+                input.btn.btn-primary(type="submit", value="Get Headlines")
+
+
+    script(src="/js/main.js")

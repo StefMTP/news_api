@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    .jumbotron
+        a.btn.btn-primary(href="/") Back Home
+        h1.display-2= title
+        ul.list-group
+            each result in results
+                li.list-group-item
+                    h3
+                        a(href=result.url, target="_blank")= result.title
+                    h5.text-muted= result.source.name
+                    p.lead= result.description
